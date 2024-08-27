@@ -1,7 +1,19 @@
+import colorgram
 from turtle import Turtle, Screen
 import random
 
-color_list = [(230, 227, 225), (229, 223, 226), (217, 227, 220), (195, 172, 121), (222, 227, 232), (157, 97, 59), (185, 159, 52), (9, 53, 77), (125, 37, 25), (55, 33, 27), (110, 69, 85), (118, 162, 175), (27, 118, 164), (74, 35, 43), (85, 138, 67), (10, 62, 44), (71, 153, 130), (121, 35, 40), (182, 98, 82), (207, 202, 146)]
+colors = colorgram.extract('image.jpg', 20)
+
+color_list = []
+
+for color in colors:
+    r = color.rgb.r
+    g = color.rgb.g
+    b = color.rgb.b
+
+    new_color = (r, g, b)
+
+    color_list.append(new_color)
 
 screen = Screen()
 screen.screensize(2000, 1500)
